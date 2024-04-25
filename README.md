@@ -24,18 +24,9 @@ This codebase is for use in the web applications pairing challenges.
 
 For this application, the required _params_ are the same for both creating and updating a user.
 
-After creating a new request in Postman, click on the `Body` tab and then the `raw` radio button. To the right of the radio buttons, you should then see a dropdown menu - choose `JSON`.
+After creating a new request in Postman, click on the `Body` tab and then the `form-data` radio button.
 
-> NOTE: Postman can behave a bit weirdly at this point so, even if `JSON` already appears to be selected, click on the dropdown and select it anyway.
+Then, in the table below, you can add your params as `Key` and `Value` pairs. For example...
 
-Then, in the field below, you can add your params in JSON format. For example...
-
-```json
-{
-  "username": "tina"
-}
-```
-
-Here's how all of that looks in Postman...
-
-![An image of the params required to create a user](./images/params_for_creating_a_user.png)
+* Key: `username`
+* Value: `tina`
