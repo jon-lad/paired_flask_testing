@@ -26,8 +26,17 @@ def test_create_a_user(web_client):
 """
 Update a user
 """
-
+def test_update_a_user(web_client):
+    response = web_client.put("/users/4", data={'username': 'Jono'})
+    assert response.status_code == 200
+    assert response.data.decode("utf-8") == "Id 4 updated with username Jono"
+    assert web_client.get("/users").data.decode('UTF-8') == "john, jane, alice, Jono"
 
 """
 Delete a user
 """
+def test_delte_a_user(web_client):
+    response = web_client.delete("/users/4")
+    assert response.status_code == 200
+    assert response.data.decode("utf-8") == "Message: User deleted"
+    assert web_client.get("/users").data.decode('UTF-8') == "john, jane, alice"
