@@ -1,1 +1,3 @@
-pair_venv
+*venv*
+*cache*
+__pycahce__
